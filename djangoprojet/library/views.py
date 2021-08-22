@@ -7,10 +7,13 @@ from django.template import Template
 #from .models import color
 from django.views import generic
 from django.shortcuts import render
+from .models import Book
 
 # Create your views here.
 def books_view(request):
+    books=Book.objects.all()
     Context={"books":books}
+
 
     return render(request,"library/home.html",Context)
 
